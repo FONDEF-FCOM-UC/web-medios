@@ -9,15 +9,29 @@
 		            <?php endif; ?>
 		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
 		            <?php endif; ?>
+		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer4') ) : ?>
+		            <?php endif; ?>
+		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer5') ) : ?>
+		            <?php endif; ?>
+		            <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer6') ) : ?>
+		            <?php endif; ?>
 		          </div>
 					
 					<nav class="clearfix">
 						<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
 					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
+					<p class="pull-right">Créditos</p>
 			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
+					<p class="attribution">
+					    <h2><?php bloginfo('name'); ?></h2>
+					    &copy; 2015<br>
+					    Facultad de Comunicaciones UC<br>
+					    Alameda 340<br>
+					    Santiado de Chile <br>
+					    Fono: +56 2 2354 2020<br>
+					    Fax: +56 2 2354 2988
+					</p>
 				
 				</div> <!-- end #inner-footer -->
 				

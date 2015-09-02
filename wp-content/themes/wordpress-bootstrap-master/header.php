@@ -37,7 +37,7 @@
 				
 		<header role="banner">
 				
-			<div class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar navbar-default">
 				<div class="container">
           
 					<div class="navbar-header">
@@ -67,4 +67,7 @@
 		
 		</header> <!-- end header -->
 		
+		<div id="mapa" class="col-sm-12 clearfix" role="mapa">
+		</div>
+			
 		<div class="container">
