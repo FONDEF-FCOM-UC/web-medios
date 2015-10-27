@@ -923,7 +923,3 @@ function _wp_filter_build_unique_id($tag, $function, $priority) {
 		return $function[0] . '::' . $function[1];
 	}
 }
-add_action('activated_plugin','save_error');
-function save_error(){
-file_put_contents(ABSPATH. 'wp-content/plugins/error_activation.html', ob_get_contents());
-}

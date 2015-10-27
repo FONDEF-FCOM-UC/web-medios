@@ -13,18 +13,194 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 /* HEADS UP: Everything that you will normally find here can be found in the library/less/wp.less */
 body {
     padding-top: 0;
+    font-family: Arial, sans-serif; 
+    color: #555; font: normal normal 14px Arial, sans-serif; 
+    -webkit-backface-visibility: hidden; 
+    -moz-backface-visibility: hidden; 
+    -o-backface-visibility: hidden; 
+    -ms-backface-visibility: hidden; 
+    backface-visibility: hidden;
 }
 
 header {
     margin-bottom: 0;
 }
 
-.navbar {
-    margin-bottom: 0;
+p {
+    line-height: 1.3;
 }
 
+/*! navbar */
+.navbar {
+    border: none;
+    margin-bottom: 0;
+    background-color: #3d7edb;
+    color: #fff;
+    border-radius: 0;
+}
+.navbar-right { 
+    float: right;
+    padding-left: 8.33%; 
+    background: rgb(36,89,165); 
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMjQ1OWE1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjMjQ1OWE1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjM2Q3ZWRiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNkN2VkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=); 
+    background: -moz-linear-gradient(120deg,  rgba(36,89,165,1) 0%, rgba(36,89,165,1) 90%, rgba(61,126,219,1) 90%, rgba(61,126,219,1) 100%); 
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(36,89,165,1)), color-stop(90%,rgba(36,89,165,1)), color-stop(90%,rgba(61,126,219,1)), color-stop(100%,rgba(61,126,219,1))); 
+    background: -webkit-linear-gradient(120deg,  rgba(36,89,165,1) 0%,rgba(36,89,165,1) 90%,rgba(61,126,219,1) 90%,rgba(61,126,219,1) 100%); 
+    background: -o-linear-gradient(120deg,  rgba(36,89,165,1) 0%,rgba(36,89,165,1) 90%,rgba(61,126,219,1) 90%,rgba(61,126,219,1) 100%); 
+    background: -ms-linear-gradient(120deg,  rgba(36,89,165,1) 0%,rgba(36,89,165,1) 90%,rgba(61,126,219,1) 90%,rgba(61,126,219,1) 100%); 
+    background: linear-gradient(300deg,  rgba(36,89,165,1) 0%,rgba(36,89,165,1) 90%,rgba(61,126,219,1) 90%,rgba(61,126,219,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2459a5', endColorstr='#3d7edb',GradientType=1 );
+}
+a.navbar-brand {
+    font-size: 32px;
+    font-family: 'boxedbold', Arial; 
+    color: #fff !important;
+}
+.navbar-nav {
+    margin-right: 0px;
+}
+.navbar-form {
+    display:inline-block;
+}
+.navbar-form .form-control {
+    border-radius: 0 !important;
+}
+.navbar-nav > li > a {
+    color: #fff;
+    font-family: 'boxedregular', Arial, sans-serif; 
+    font-weight: normal; 
+    text-transform: uppercase; 
+    font-size: 12px;
+} 
+
+/*! mapa */
 #mapa {
     background-color: #666;
     height: 80px;
     margin-bottom: 20px;
+}
+
+/*! fonts */
+@font-face {
+    font-family: 'boxedlight'; src: url('assets/fonts/boxed-light-webfont.eot'); src: url('assets/fonts/boxed-light-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-light-webfont.woff') format('woff'), url('assets/fonts/boxed-light-webfont.ttf') format('truetype'), url('assets/fonts/boxed-light-webfont.svg#boxedlight') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'boxedregular'; src: url('assets/fonts/boxed-regulat-webfont.eot'); src: url('assets/fonts/boxed-regulat-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-regulat-webfont.woff') format('woff'), url('assets/fonts/boxed-regulat-webfont.ttf') format('truetype'), url('assets/fonts/boxed-regulat-webfont.svg#boxedregular') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'boxedbold'; src: url('assets/fonts/boxed-bold-webfont.eot'); src: url('assets/fonts/boxed-bold-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-bold-webfont.woff') format('woff'), url('assets/fonts/boxed-bold-webfont.ttf') format('truetype'), url('assets/fonts/boxed-bold-webfont.svg#boxedbold') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'boxedlight_italic'; src: url('assets/fonts/boxed-light-italic-webfont.eot'); src: url('assets/fonts/boxed-light-italic-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-light-italic-webfont.woff') format('woff'), url('assets/fonts/boxed-light-italic-webfont.ttf') format('truetype'), url('assets/fonts/boxed-light-italic-webfont.svg#boxedlight_italic') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'boxedregular_italic'; src: url('assets/fonts/boxed-regular-italic-webfont.eot'); src: url('assets/fonts/boxed-regular-italic-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-regular-italic-webfont.woff') format('woff'), url('assets/fonts/boxed-regular-italic-webfont.ttf') format('truetype'), url('assets/fonts/boxed-regular-italic-webfont.svg#boxedregular_italic') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'boxedbold_italic'; src: url('assets/fonts/boxed-bold-italic-webfont.eot'); src: url('assets/fonts/boxed-bold-italic-webfont.eot?#iefix') format('embedded-opentype'), url('assets/fonts/boxed-bold-italic-webfont.woff') format('woff'), url('assets/fonts/boxed-bold-italic-webfont.ttf') format('truetype'), url('assets/fonts/boxed-bold-italic-webfont.svg#boxedbold_italic') format('svg'); 
+    font-weight: normal; 
+    font-style: normal;
+}
+
+/*! contenido */
+.post h2 {
+    font: normal normal 32px/1 'boxedbold', Arial, sans-serif; 
+    color: #555559; 
+    margin-bottom: 20px;
+}
+
+.post p {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.frontpage h4 {
+    font-family: 'boxedbold', Arial, sans-serif; 
+    color: #555559; 
+}
+
+.frontpage-tag-main {
+    position:absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: #000;
+    color: #fff; 
+    padding: 5px 10px;
+    text-transform: uppercase; 
+    font-family: 'boxedbold', Arial, sans-serif; 
+}
+
+.frontpage-tag {
+    position:absolute; 
+    top: 0; 
+    left: 0; 
+    background-color: #000; 
+    color: #fff; 
+    padding: 5px 10px; 
+    font-size: 10px;
+    text-transform: uppercase; 
+    font-family: 'boxedregular', Arial, sans-serif; 
+}
+
+/* Widget destacado */
+#destacado {
+    position: relative;
+    border: 1px #ccc solid;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+#destacado h2{
+    font: normal normal 32px/1 'boxedbold', Arial, sans-serif; 
+    color: #555559; 
+}
+
+#destacado h3{
+    font: normal normal 18px/1 'boxedbold', Arial, sans-serif; 
+    color: #555559; 
+}
+
+#destacado p {
+    margin-top: 120px;
+}
+
+#destacado .photo {
+    margin-bottom: 10px;
+}
+
+
+/* footer */
+footer {
+    background-color: #8B2A21;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer h2 {
+    font: 38px/1.2 "boxedbold",Arial,sans-serif;
+    margin-bottom: 5px;
+}
+
+footer h4 {
+    font: 16px/1.2 "boxedbold",Arial,sans-serif;
+    margin-bottom: 5px;
+}
+
+footer .attribution {
+    line-height: 150%;
+}
+
+footer li {
+    line-height: 1.5;
+    list-style-type: none;
+    font-size: 14px;
 }

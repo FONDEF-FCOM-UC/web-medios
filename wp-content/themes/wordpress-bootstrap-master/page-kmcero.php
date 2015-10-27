@@ -13,7 +13,7 @@ Template Name: Portada KmCero
                         $args = array(
                             'post_type' => 'post', 
                             'order' => 'DESC', 
-                            'posts_per_page' => 7,
+                            'posts_per_page' => 8,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'category',
@@ -36,7 +36,7 @@ Template Name: Portada KmCero
 					        ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							    <div style="position:relative">
-							        <span style="position:absolute; top: 0; left: 0; background-color: #000; color: #fff; padding: 5px 10px;"><?php echo $categories[0]->name ?></span>
+							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
 							        <?php the_post_thumbnail('slider-thumb');  ?>
 							    </div>
 							    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
@@ -48,7 +48,7 @@ Template Name: Portada KmCero
 						<?php } else if($i > 0) { ?>
 						        <div class="col-sm-4">
 						            <div style="position:relative">
-							            <span style="position:absolute; top: 0; left: 0; background-color: #000; color: #fff; padding: 5px 10px; font-size:10px;"><?php echo $categories[0]->name ?></span>
+							            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 							            <?php the_post_thumbnail('thumbnail');  ?>
 							        </div>
 							        <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
