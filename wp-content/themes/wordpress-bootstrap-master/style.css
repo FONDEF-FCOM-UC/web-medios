@@ -211,6 +211,10 @@ footer li {
     margin-bottom: 20px;
 }
 
+#main article iframe {
+    margin: 20px;
+}
+
 .wp-caption {
     color: #666;
     font-size: 0.75rem;
@@ -258,8 +262,7 @@ blockquote p {
 
 
 footer .widgettitle, footer .widgettitle a {
-    font: normal normal 16px/1.2 'boxedbold', Arial, sans-serif; 
-    color: #3c9adc;
+    color: #fff;
 }
 
 /* Recent posts extended */
