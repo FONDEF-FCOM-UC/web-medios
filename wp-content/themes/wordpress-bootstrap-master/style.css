@@ -230,17 +230,17 @@ blockquote p {
     font-size: 120% !important;
 }
 
-img.alignleft {
+.alignleft {
     float: left;
     margin-right: 20px;
 }
 
-img.alignright {
+.alignright {
     float: right;
     margin-left: 20px;
 }
 
-img.aligncenter {
+.aligncenter {
     display: block;
     margin: 0 auto;
 }
@@ -256,6 +256,11 @@ img.aligncenter {
 .widget li a {color: #888; display: block; padding: 3px; border-radius: 4px;}
 .widget li a:hover {background-color: rgba(0,0,0,.2);}
 
+
+footer .widgettitle, footer .widgettitle a {
+    font: normal normal 16px/1.2 'boxedbold', Arial, sans-serif; 
+    color: #3c9adc;
+}
 
 /* Recent posts extended */
 .rpwe-block ul{
