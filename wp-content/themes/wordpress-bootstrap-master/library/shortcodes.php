@@ -102,7 +102,77 @@ function blockquotes( $atts, $content = null ) {
 
 add_shortcode('blockquote', 'blockquotes'); 
  
+// Info boxes
+function infobox_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'titulo' => '',
+	'class' => '',
+	), $atts ) );
+	
+	$output = '<div class="infobox';
+	
+	if($class){
+	    $output .= ' '.$class;
+	}
+	
+	$output .= '"><h3>' . $titulo . '</h3>';
+	$output .= '<p>' . $content . '</p>';
+	$output .= '</div>';
+	
+	return $output;
+}
 
+add_shortcode( 'infobox', 'infobox_shortcode' );
 
+// Iframes
+function leyenda_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+	'texto' => '',
+	'class' => '',
+	), $atts ) );
+	
+	$output = '<div class="leyenda';
+	
+	if($class){
+	    $output .= ' '.$class;
+	}
+	
+	// Borramos el p
+	$chars = ' \t\n\r\0\x0B';
+	$subpattern = '(<(br|p)[^>]*>)';
+    $pattern = '~(^'.$subpattern.'|'.$subpattern.'$)~i';
+	$data = trim(preg_replace($pattern, '', $content), $chars);
+	$data = preg_replace(array('/width="\d+"/i', '/height="\d+"/i'), array("", ""), $data);
+    $data = addClass($data, 'video');
+    
+	$output .= '"><div class="iframe">'. $data.' </div>';
+	$output .= '<p>' . $texto . '</p>';
+	$output .= '</div>';
+	
+	return $output;
+}
+
+add_shortcode( 'leyenda', 'leyenda_shortcode' );
+
+function addClass($htmlString = '', $newClass) 
+{
+    $pattern = '/class="([^"]*)"/';
+
+    // class attribute set
+    if (preg_match($pattern, $htmlString, $matches)) {
+        $definedClasses = explode(' ', $matches[1]);
+        if (!in_array($newClass, $definedClasses)) {
+            $definedClasses[] = $newClass;
+            $htmlString = str_replace($matches[0], sprintf('class="%s"', implode(' ', $definedClasses)), $htmlString);
+        }
+    }
+
+    // class attribute not set
+    else {
+        $htmlString = preg_replace('/(<\b[^><]*)>/i', sprintf('$1class="%s" ', $newClass), $htmlString);
+    }
+
+    return $htmlString;
+}
 
 ?>
