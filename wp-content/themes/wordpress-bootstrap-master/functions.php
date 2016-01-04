@@ -733,4 +733,49 @@ function wp_bootstrap_filter_ptags_on_images( $content ){
 }
 add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
 
+// Filter Functions with Hooks
+function custom_mce_button() {
+  // Check if user have permission
+  if ( !current_user_can( 'edit_posts' ) && !current_user_can( 'edit_pages' ) ) {
+    return;
+  }
+  // Check if WYSIWYG is enabled
+  if ( 'true' == get_user_option( 'rich_editing' ) ) {
+    add_filter( 'mce_external_plugins', 'infobox_tinymce_plugin' );
+    add_filter( 'mce_external_plugins', 'leyenda_tinymce_plugin' );
+    add_filter( 'mce_buttons', 'infobox_mce_button' );
+    add_filter( 'mce_buttons', 'leyenda_mce_button' );
+  }
+}
+add_action('admin_head', 'custom_mce_button');
+
+// Function for new button
+function infobox_tinymce_plugin( $plugin_array ) {
+  $plugin_array['infobox_mce_button'] = get_template_directory_uri() .'/library/js/editor_infobox.js';
+  return $plugin_array;
+}
+
+function leyenda_tinymce_plugin( $plugin_array ) {
+  $plugin_array['leyenda_mce_button'] = get_template_directory_uri() .'/library/js/editor_leyenda.js';
+  return $plugin_array;
+}
+
+// Register new button in the editor
+function infobox_mce_button( $buttons ) {
+  array_push( $buttons, 'infobox_mce_button' );
+  return $buttons;
+}
+
+function leyenda_mce_button( $buttons ) {
+  array_push( $buttons, 'leyenda_mce_button' );
+  return $buttons;
+}
+
+function custom_css_mce_button() {
+    wp_register_style( 'fa-editor', get_template_directory_uri() . '/bower_components/font-awesome/css/editor.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'fa-editor' );
+}
+
+add_action('admin_enqueue_scripts', 'custom_css_mce_button');
+
 ?>
