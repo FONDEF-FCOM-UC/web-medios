@@ -1,5 +1,6 @@
 <?php
 
+
 // Add Translation Option
 load_theme_textdomain( 'wpbootstrap', TEMPLATEPATH.'/languages' );
 $locale = get_locale();
@@ -23,6 +24,10 @@ if( !function_exists( "wp_bootstrap_head_cleanup" ) ) {
 }
 // Launch operation cleanup
 add_action( 'init', 'wp_bootstrap_head_cleanup' );
+
+// Agregamos los Widgets
+require_once(get_template_directory() . '/library/widgets/dynamic-widget.php');
+require_once(get_template_directory() . '/library/widgets/tabs.php');
 
 // remove WP version from RSS
 if( !function_exists( "wp_bootstrap_rss_version" ) ) {  
@@ -162,7 +167,7 @@ you like. Enjoy!
 function wp_bootstrap_register_sidebars() {
   register_sidebar(array(
   	'id' => 'sidebar1',
-  	'name' => 'Main Sidebar',
+  	'name' => 'Sidebar principal',
   	'description' => 'Used on every page BUT the homepage page template.',
   	'before_widget' => '<div id="%1$s" class="widget %2$s">',
   	'after_widget' => '</div>',
@@ -172,17 +177,27 @@ function wp_bootstrap_register_sidebars() {
     
   register_sidebar(array(
   	'id' => 'sidebar2',
-  	'name' => 'Homepage Sidebar',
+  	'name' => 'Página de inicio: Sidebar',
   	'description' => 'Used only on the homepage page template.',
   	'before_widget' => '<div id="%1$s" class="widget %2$s">',
   	'after_widget' => '</div>',
   	'before_title' => '<h4 class="widgettitle">',
   	'after_title' => '</h4>',
   ));
-    
+  
+  register_sidebar( array(
+    'name' => 'Página de inicio: Contenido', 
+    'id' => 'portada_contenido',
+    'description'   => 'Use to display widgets in primary column of home',
+    'before_widget' => '<section id="%1$s" class="row frontpage %2$s">',
+    'after_widget' => '</section>',
+    'before_title' => '<h3 class="category-title">',
+    'after_title' => '</h3>',
+  ));
+
   register_sidebar(array(
     'id' => 'footer1',
-    'name' => 'Footer 1',
+    'name' => 'Pie de página 1',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -191,7 +206,7 @@ function wp_bootstrap_register_sidebars() {
 
   register_sidebar(array(
     'id' => 'footer2',
-    'name' => 'Footer 2',
+    'name' => 'Pie de página 2',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -200,7 +215,7 @@ function wp_bootstrap_register_sidebars() {
 
   register_sidebar(array(
     'id' => 'footer3',
-    'name' => 'Footer 3',
+    'name' => 'Pie de página 3',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -209,7 +224,7 @@ function wp_bootstrap_register_sidebars() {
     
   register_sidebar(array(
     'id' => 'footer4',
-    'name' => 'Footer 4',
+    'name' => 'Pie de página 4',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -218,7 +233,7 @@ function wp_bootstrap_register_sidebars() {
   
   register_sidebar(array(
     'id' => 'footer5',
-    'name' => 'Footer 5',
+    'name' => 'Pie de página 5',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -227,7 +242,7 @@ function wp_bootstrap_register_sidebars() {
   
   register_sidebar(array(
     'id' => 'footer6',
-    'name' => 'Footer 6',
+    'name' => 'Pie de página 6',
     'before_widget' => '<div id="%1$s" class="widget col-sm-2 %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h4 class="widgettitle">',
@@ -774,6 +789,14 @@ function leyenda_mce_button( $buttons ) {
 function custom_css_mce_button() {
     wp_register_style( 'fa-editor', get_template_directory_uri() . '/bower_components/font-awesome/css/editor.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'fa-editor' );
+    
+    global $pagenow;
+    if( 'widgets.php' == $pagenow ){
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('fcom-widgets', get_template_directory_uri() .'/assets/admin/js/widget.js', array('jquery','jquery-ui-datepicker','jquery-ui-sortable','jquery-ui-sortable', 'jquery-ui-draggable','jquery-ui-droppable','admin-widgets' ) );
+        wp_enqueue_style('fcom-widgets', get_template_directory_uri() .'/assets/admin/css/admin-widget.css');
+        wp_enqueue_style('fcom-jquery-ui', get_template_directory_uri() .'/assets/admin/css/jquery-ui.css');
+    }
 }
 
 add_action('admin_enqueue_scripts', 'custom_css_mce_button');

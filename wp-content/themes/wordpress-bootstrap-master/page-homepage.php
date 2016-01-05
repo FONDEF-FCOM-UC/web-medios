@@ -84,8 +84,11 @@ Template Name: Homepage
 					</section>
 					
 					<!-- Widget -->
-			        <section class="row frontpage">
-					</section>
+					<?php if ( is_active_sidebar( 'portada_contenido' ) ) : ?>
+
+						<?php dynamic_sidebar( 'portada_contenido' ); ?>
+
+					<?php endif; ?>
 					
 					<!-- Noticias laterales -->
 					<section class="row frontpage">
@@ -112,7 +115,7 @@ Template Name: Homepage
 					        while ($q->have_posts()) : $q->the_post();
 					        $categories = get_the_category();
 					        ?>
-				        <div class="col-sm-6">
+				        <div class="col-sm-6 featured-new">
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							    <div style="position:relative">
 							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
