@@ -169,7 +169,7 @@ function addClass($htmlString = '', $newClass)
 
     // class attribute not set
     else {
-        $htmlString = preg_replace('/(<\b[^><]*)>/i', sprintf('$1class="%s" ', $newClass), $htmlString);
+        $htmlString = str_replace("<iframe", sprintf('$1<iframe class="%s" ', $newClass), $htmlString);
     }
 
     return $htmlString;

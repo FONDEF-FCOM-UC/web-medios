@@ -12,17 +12,24 @@
 						
 							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
 							
-							<div class="page-header"><h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1></div>
-							
-							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time> <?php _e("by", "wpbootstrap"); ?> <?php the_author_posts_link(); ?> <span class="amp">&</span> <?php _e("filed under", "wpbootstrap"); ?> <?php the_category(', '); ?>.</p>
-						
+							<div class="page-header">
+							    <?php the_category(', '); ?>
+							    <h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
+							    <div class="excerpt">
+							        <?php global $more; $more = 0;
+                                    the_content('');
+                                    $more = 1; ?>
+							    </div>
+    							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time></p>
+						    </div>
+						    <div class="autor">
+						        <?php echo get_avatar( get_the_author_meta( 'ID' ), 38, '', '', array('class' => 'img-circle')); ?>
+						        <?php the_author_posts_link(); ?>
+						    </div>
 						</header> <!-- end article header -->
-					
 						<section class="post_content clearfix" itemprop="articleBody">
-							<?php the_content(); ?>
-							
+							<?php the_content('',true); ?>
 							<?php wp_link_pages(); ?>
-					
 						</section> <!-- end article section -->
 						
 						<footer>

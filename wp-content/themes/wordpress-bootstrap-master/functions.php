@@ -801,4 +801,14 @@ function custom_css_mce_button() {
 
 add_action('admin_enqueue_scripts', 'custom_css_mce_button');
 
+
+// Excluimos las categorias
+function exclude_widget_categories($args){
+    $exclude = "1"; // The IDs of the excluding categories
+    $args["exclude"] = $exclude;
+    return $args;
+}
+
+add_filter("widget_categories_args", "exclude_widget_categories");
+
 ?>

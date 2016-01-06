@@ -96,14 +96,13 @@ Template Name: Homepage
                         $args = array(
                             'post_type' => 'post', 
                             'order' => 'DESC', 
-                            'posts_per_page' => 7,
-                            'tax_query' => array(
+                            'posts_per_page' => 6,
+                            'meta_query' => array(
                                 array(
-                                    'taxonomy' => 'category',
-                                    'field'    => 'term_id',
-                                    'terms'    => 7,
+                                 'key' => '_thumbnail_id',
+                                 'compare' => 'EXISTS'
                                 ),
-                            ),
+                            )
                         );
 
                         $q = new WP_Query( $args );
@@ -117,10 +116,12 @@ Template Name: Homepage
 					        ?>
 				        <div class="col-sm-6 featured-new">
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-							    <div style="position:relative">
+							    <?php if ( has_post_thumbnail() ) : ?>
+							    <div class="thumb">
 							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
-							        <?php the_post_thumbnail('slider-thumb');  ?>
+							        <?php the_post_thumbnail(array(440, 250));  ?>
 							    </div>
+							    <?php endif; ?>
 							    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 							    <p><?php the_excerpt(); ?></p>
 							</article>

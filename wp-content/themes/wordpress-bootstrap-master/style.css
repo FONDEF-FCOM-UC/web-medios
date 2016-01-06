@@ -262,8 +262,8 @@ blockquote p {
 .widget ul {padding-left: 14px; color: #dff2ff; font-size: 14px; list-style-type: disc; margin: 0 0 15px 0;}
 .widget.no-bullets ul {list-style-type: none; padding-left: 0;}
 .widget li {line-height: 1.2;}
-.widget li a {color: #888; display: block; padding: 3px; border-radius: 4px;}
-.widget li a:hover {background-color: rgba(0,0,0,.2);}
+.widget li a {color: #888; display: block; padding: 3px;}
+.widget li a:hover {text-decoration: underline;}
 
 
 footer .widgettitle, footer .widgettitle a {
@@ -431,6 +431,12 @@ zoom: 1;
     overflow: hidden;
 }
 
+.featured-new .thumb {
+    position:relative;
+    max-height: 250px;
+    overflow: hidden;
+}
+
 .featured-new h2 {
    font-family: 'boxedregular', Arial, sans-serif !important; 
 }
@@ -441,4 +447,8 @@ zoom: 1;
 
 .no-margin {
     margin: 0;
+}
+
+.img-circle {
+    border-radius: 50%;
 }
