@@ -10,7 +10,7 @@
 						
 						<header>
 						
-							<?php the_post_thumbnail( 'wpbs-featured' ); ?>
+							<?php the_post_thumbnail( 'large'); ?>
 							
 							<div class="page-header">
 							    <?php the_category(', '); ?>
