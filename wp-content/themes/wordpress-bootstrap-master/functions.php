@@ -25,9 +25,13 @@ if( !function_exists( "wp_bootstrap_head_cleanup" ) ) {
 // Launch operation cleanup
 add_action( 'init', 'wp_bootstrap_head_cleanup' );
 
+//Include rolling posts index
+require_once(get_template_directory() . '/library/rolling-posts-index.php');
+
 // Agregamos los Widgets
 require_once(get_template_directory() . '/library/widgets/dynamic-widget.php');
 require_once(get_template_directory() . '/library/widgets/tabs.php');
+require_once(get_template_directory() . '/library/widgets/news-list.php');
 
 // remove WP version from RSS
 if( !function_exists( "wp_bootstrap_rss_version" ) ) {  
@@ -115,6 +119,9 @@ function wp_bootstrap_main_nav_fallback() {
 function wp_bootstrap_footer_links_fallback() { 
   /* you can put a default here if you like */ 
 }
+
+// Category Metadata
+require_once('library/category-meta.php');
 
 // Shortcodes
 require_once('library/shortcodes.php');
@@ -810,5 +817,18 @@ function exclude_widget_categories($args){
 }
 
 add_filter("widget_categories_args", "exclude_widget_categories");
+
+// Funciones para eliminar posts repetidos
+if( ! function_exists('add_rolling_posts') ) {
+    function add_rolling_posts($post_ids) {
+        RollingPostsIndex::set($post_ids);
+    }
+}
+
+if( ! function_exists('get_rolling_posts') ) {
+    function get_rolling_posts(){
+        return RollingPostsIndex::get();
+    }
+}
 
 ?>

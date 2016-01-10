@@ -1,6 +1,6 @@
 <?php  
-class fcom_webmedios_tabs_Widget extends fcom_webmedios_dynamic_Widget {
 
+class fcom_webmedios_tabs_Widget extends fcom_webmedios_dynamic_Widget {
     /**
      * Constructor
      *

@@ -65,7 +65,9 @@ add_action( 'pre_get_posts', function ($query ){
             
             }   
             wp_reset_query();
-            
+
+            $links_array = array();
+                        
             // Creamos los links con todos
             foreach($nodos_array as $nodo_i)
             {

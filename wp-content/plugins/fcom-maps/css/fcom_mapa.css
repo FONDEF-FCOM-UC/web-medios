@@ -40,6 +40,11 @@
     height: 50px; 
     overflow: hidden;
     margin-right: 5px;
+    margin-bottom: 30px;
+}
+
+.tooltip .image img {
+    margin-left: -20px;
 }
 
 .tooltip h2 {

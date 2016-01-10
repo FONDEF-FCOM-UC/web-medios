@@ -44,7 +44,9 @@ d3.json("fcom-maps/json/data", function(error, graph) {
         html_str = "";
         if(d.img_path != false)
             html_str += "<div class='image'><img src='"+d.img_path[0]+"' height='50px'></div>";
-        html_str += "<h2>"+d.name+"</h2>"
+        
+        html_str += "<h2>"+d.name+"</h2>";
+        html_str += "<small>"+d.fecha.dia+" "+d.fecha.mes+" "+d.fecha.agno+"</small>";
         
         var div = d3.select("body").append("div")
                     .attr('pointer-events', 'none')
@@ -65,10 +67,11 @@ d3.json("fcom-maps/json/data", function(error, graph) {
 		             .attr('pointer-events', 'none')
 		             .attr("class", "tooltip story")
 		             .style("opacity", 1)
-		             .html("<div class='noticias'></div>")
+		             .html("<div class='noticias'>Cargando...</div>")
 		             .style("right", ("0px"))
                      .style("top", ("50px"));
          $.getJSON("fcom-maps/json/post?id="+d.postId, function( json ) {
+            $(".noticias").empty();
             $(".noticias").append('<h2>'+json.titulo+'</h2>');
             $(".noticias").append('<p class="bajada">'+json.bajada+'</p>');
             $(".noticias").append('<div class="meta"><a href="'+json.path+'" class="btn btn-info btn-sm">Ver más</a> Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+'</div>');
@@ -90,13 +93,5 @@ d3.json("fcom-maps/json/data", function(error, graph) {
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
   });
-  
-  /*
-  poly = "-164,-73 164,-73 164,12 132,73 -164,73" ;
-
-  node.on("mouseover", function (d) {
-    var g = d3.select(this); // The node
-    console.log(g)
-  });*/
   
 });

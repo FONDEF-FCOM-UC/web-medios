@@ -142,7 +142,8 @@ function leyenda_shortcode( $atts, $content = null ) {
 	$subpattern = '(<(br|p)[^>]*>)';
     $pattern = '~(^'.$subpattern.'|'.$subpattern.'$)~i';
 	$data = trim(preg_replace($pattern, '', $content), $chars);
-	$data = preg_replace(array('/width="\d+"/i', '/height="\d+"/i'), array("", ""), $data);
+	$data = preg_replace('/width="\d+"/i', "", $data);
+	$data = preg_replace('/height="\d+"/i', "", $data);
     $data = addClass($data, 'video');
     
 	$output .= '"><div class="iframe">'. $data.' </div>';
@@ -169,7 +170,7 @@ function addClass($htmlString = '', $newClass)
 
     // class attribute not set
     else {
-        $htmlString = str_replace("<iframe", sprintf('$1<iframe class="%s" ', $newClass), $htmlString);
+        $htmlString = str_replace("<iframe", sprintf('<iframe class="%s" ', $newClass), $htmlString);
     }
 
     return $htmlString;

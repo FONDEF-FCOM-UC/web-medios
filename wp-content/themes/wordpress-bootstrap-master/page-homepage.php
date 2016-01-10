@@ -21,6 +21,7 @@ Template Name: Homepage
                 'post_type' => 'post', 
                 'order' => 'DESC', 
                 'posts_per_page' => 6,
+                'post__not_in' => get_rolling_posts(),
                 'meta_query' => array(
                     array(
                      'key' => '_thumbnail_id',
@@ -43,7 +44,7 @@ Template Name: Homepage
 				    <?php if ( has_post_thumbnail() ) : ?>
 				    <div class="thumb">
 				        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
-				        <?php the_post_thumbnail(array(440, 250));  ?>
+				        <?php the_post_thumbnail('large');  ?>
 				    </div>
 				    <?php endif; ?>
 				    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
@@ -51,9 +52,11 @@ Template Name: Homepage
 				</article>
 			</div>
 			<?php  
-			    $i++; ?>
+			    $i++; 
+			    $post_ids[] = get_the_ID();?>
 			<?php endwhile; 
 			    wp_reset_postdata();
+			    add_rolling_posts($post_ids);
 			?>	
 			</div>
 			<?php }; ?>
