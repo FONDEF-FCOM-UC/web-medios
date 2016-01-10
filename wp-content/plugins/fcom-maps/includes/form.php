@@ -10,6 +10,6 @@
  */
 ?>
 	<p>
-		Alto: <input class= "small-input" id="<?php echo $this->get_field_id( 'height' ); ?>" name="<?php echo $this->get_field_name( 'height' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['height'] ); ?>" /><br>
 		Ancho: <input class="small-input" id="<?php echo $this->get_field_id( 'width' ); ?>" name="<?php echo $this->get_field_name( 'width' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['width'] ); ?>"/>
+		Alto: <input class= "small-input" id="<?php echo $this->get_field_id( 'height' ); ?>" name="<?php echo $this->get_field_name( 'height' ); ?>" type="number" step="1" min="0" value="<?php echo (int)( $instance['height'] ); ?>" /><br>
 	</p>

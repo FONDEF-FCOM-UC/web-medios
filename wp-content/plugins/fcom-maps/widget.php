@@ -46,7 +46,7 @@ class FCOM_Map_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {  
 	
 	    if ( empty( $instance['width'] ) && empty( $instance['height'] ) ) {
-		    echo '<div id="fcom-mapa" style="width:930px;height:450px;"></div>';
+		    echo '<div id="fcom-mapa" style="width:930px;height:400px;"></div>';
         } else
         {
             echo '<div id="fcom-mapa" style="width:'.$instance['width'].'px;height:'.$instance['height'].'px;"></div>';
