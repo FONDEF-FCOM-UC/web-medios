@@ -84,6 +84,7 @@ class FCOM_Maps {
             wp_enqueue_style('fcom-tags-mapa-css', plugins_url('/css/fcom_mapa.css', __FILE__));
             wp_enqueue_script('jquery-js', plugins_url('/js/jquery-2.1.4.min.js', __FILE__));
             wp_enqueue_script('d3-js', plugins_url('/js/d3.min.js', __FILE__));
+            wp_enqueue_script('functions-js', plugins_url('/js/functions.js', __FILE__));
         }
     }
 }

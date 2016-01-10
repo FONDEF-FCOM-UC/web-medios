@@ -67,7 +67,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
 		             .attr('pointer-events', 'none')
 		             .attr("class", "tooltip story")
 		             .style("opacity", 1)
-		             .html("<div class='noticias'>Cargando...</div>")
+		             .html("<a href='#' class='close'>x</a><div class='noticias'>Cargando...</div>")
 		             .style("right", ("0px"))
                      .style("top", ("50px"));
          $.getJSON("fcom-maps/json/post?id="+d.postId, function( json ) {

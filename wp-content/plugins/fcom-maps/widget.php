@@ -54,6 +54,7 @@ class FCOM_Map_Widget extends WP_Widget {
         wp_enqueue_style('fcom-tags-mapa-css', plugins_url('/css/fcom_mapa.css', __FILE__));
         wp_enqueue_script('jquery-js', plugins_url('/js/jquery-2.1.4.min.js', __FILE__));
         wp_enqueue_script('d3-js', plugins_url('/js/d3.min.js', __FILE__));
+        wp_enqueue_script('functions-js', plugins_url('/js/functions.js', __FILE__));
         wp_enqueue_script('fcom_mapa-js', plugins_url('/js/fcom_mapa.ribbon.js', __FILE__));
 	}
 
