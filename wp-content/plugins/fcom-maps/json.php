@@ -125,9 +125,9 @@ add_action( 'pre_get_posts', function ($query ){
                     $post_tags = get_tags();
                     
                     $more = 0;
-                    $bajada = get_the_content('', true);
+                    $bajada = get_the_content('', true);;
                     $more = 1;
-                    $cuerpo = get_the_content('', true);
+                    $cuerpo = apply_filters('the_content', get_the_content('', true));
             
                     // Creamos el nodo
                     $post = array(
