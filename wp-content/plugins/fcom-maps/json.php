@@ -10,7 +10,10 @@ add_action( 'pre_get_posts', function ($query ){
 	        global $fcom_tags_db_version;
 
             // Artículos
-            $args = array('post_type' => 'post');
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page'=>-1
+            );
             $post_query = new WP_Query($args);
             
             $x = 0; $y=0; $contador = 0;
@@ -20,37 +23,19 @@ add_action( 'pre_get_posts', function ($query ){
                 while($post_query->have_posts() )
                 {
                     $post_query->the_post();
-                    //Ver que grupo es el más frecuente
-                    $grupo_count = array();
-                    //Busca el tag y todas sus copias en las distintas anclas
-                    $fuerzas_temp = array();
-                    
                     $post_tags = get_tags();
-                    foreach($post_tags as $tag)
-                    {
-                        if (array_key_exists($tag->term_id,$tag_id))
-                        {
-                            foreach($tag_id[$tag->term_id] as $semitag)
-                            {
-                                $fuerzas_temp[] = array('nodo' => $semitag['index'], 'grupo' => $semitag['grupo']);
-                                if(array_key_exists($semitag['grupo'],$grupo_count))
-                                {
-                                    $grupo_count[$semitag['grupo']]+=1;
-                                }
-                                else
-                                {
-                                    $grupo_count[$semitag['grupo']]=1;
-                                }
-                            }
-                        }
-                    }
+                    $categories = get_the_category();
+                    $grupo = '';
                     
+                    foreach($categories as $category)
+                        $grupo .= $category->term_id;
+                                  
                     //crea el nodo
                     $nodos_array[] = array(
                         'name'=> get_the_title(),
                         'id' => $contador,
                         'postId' => get_the_ID(),
-                        'group'=> rand(1,5),
+                        'group'=> $grupo,
                         'titulo' => get_the_title(), 
                         'bajada' => get_the_excerpt(),
                         'img_path' => wp_get_attachment_image_src( get_post_thumbnail_id(), array(100,100) ),
@@ -67,27 +52,31 @@ add_action( 'pre_get_posts', function ($query ){
             wp_reset_query();
 
             $links_array = array();
-                        
+            $links_index = array();
+            $prob = rand(0,10);
+               
             // Creamos los links con todos
             foreach($nodos_array as $nodo_i)
             {
                 foreach($nodos_array as $nodo_j)
                 {
                     // Vemos si no existe el inverso
-                    $edge = array(
-                        'target' => $nodo_i['id'],
-                        'source' => $nodo_j['id'],
-                        'value' => 5
-                    );
+                    $edge = array($nodo_j['id'], $nodo_i['id']);
                         
-                    if(!in_array($edge, $links_array) && $nodo_i['id'] != $nodo_j['id'])
+                    if(!in_array($edge, $links_index) && $nodo_i['id'] != $nodo_j['id'] && $prob == 1)
                     {
+                        // Agregamos el link
                         $links_array[] = array(
                             'source' => $nodo_i['id'],
                             'target' => $nodo_j['id'],
-                            'value' => 5
+                            'value' => rand(1,10)
                         );
+                        
+                        // Agregamos la flecha creada
+                        $links_index = array($nodo_i['id'], $nodo_j['id']);
                     }
+                    
+                    $prob = rand(0,5);
                 }
             }
             

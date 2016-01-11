@@ -5,7 +5,7 @@ var color = d3.scale.category20();
 
 var force = d3.layout.force()
     .charge(-120)
-    .linkDistance(30)
+    .linkDistance(150)
     .size([width, height]);
 
 var svg = d3.select("#fcom-mapa").append("svg")
@@ -54,7 +54,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
                     .style("opacity", 1)
                     .html(html_str)
                     .style("left", (d.x + 120 + "px"))
-                    .style("top", (d.y - 60 + "px"));
+                    .style("top", (d.y - 30 + "px"));
       })
       .on("mouseout", function() {
           // Remove the info text on mouse out.

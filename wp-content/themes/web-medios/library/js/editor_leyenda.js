@@ -16,11 +16,11 @@
                         name: 'className',
                         label: 'Alineación',
                         values: [{
+                            text: 'Completa',
+                            value: 'center'
+                        }, {
                             text: 'Izquierda',
                             value: 'left'
-                        }, {
-                            text: 'Centro',
-                            value: 'center'
                         }, {
                             text: 'Derecha',
                             value: 'right'

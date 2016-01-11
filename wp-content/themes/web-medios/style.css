@@ -386,13 +386,15 @@ zoom: 1;
 .infobox.right {
     width: 250px;
     float: right;
-    padding-left: 30px;
+    margin-left: 30px;
+    margin-right: 0;
 }
 
 .infobox.left {
     width: 250px;
     float: left;
-    padding-right: 30px;
+    margin-right: 30px;
+    margin-left: 0;
 }
 
 .infobox h3 {
@@ -406,6 +408,20 @@ zoom: 1;
     color: #fff;
     margin-bottom: 20px;
     clear: both;
+}
+
+.leyenda.right {
+    width: 250px;
+    float: right;
+    margin-left: 30px;
+    margin-right: 0;
+}
+
+.leyenda.left {
+    width: 250px;
+    float: left;
+    margin-right: 30px;
+    margin-left: 0;
 }
 
 .leyenda p {
