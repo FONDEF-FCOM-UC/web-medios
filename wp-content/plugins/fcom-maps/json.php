@@ -23,7 +23,7 @@ add_action( 'pre_get_posts', function ($query ){
                 while($post_query->have_posts() )
                 {
                     $post_query->the_post();
-                    $post_tags = get_tags();
+                    $tags = wp_get_post_tags(get_the_ID());
                     $categories = get_the_category();
                     $grupo = '';
                     
@@ -38,6 +38,7 @@ add_action( 'pre_get_posts', function ($query ){
                         'group'=> $grupo,
                         'titulo' => get_the_title(), 
                         'bajada' => get_the_excerpt(),
+                        'tags' => wp_get_post_tags(get_the_ID()),
                         'img_path' => wp_get_attachment_image_src( get_post_thumbnail_id(), array(100,100) ),
                         'path' => get_permalink(),
                         'fecha' => array('dia' => get_the_time('d'), 'mes'=> get_the_time('M'), 'agno' => get_the_time('Y'))
@@ -53,7 +54,6 @@ add_action( 'pre_get_posts', function ($query ){
 
             $links_array = array();
             $links_index = array();
-            $prob = rand(0,10);
                
             // Creamos los links con todos
             foreach($nodos_array as $nodo_i)
@@ -62,21 +62,32 @@ add_action( 'pre_get_posts', function ($query ){
                 {
                     // Vemos si no existe el inverso
                     $edge = array($nodo_j['id'], $nodo_i['id']);
+                    
+                    // Vemos cuantos tags comparten entre ellos
+                    $tags_i = array();
+                    $tags_j = array();
+                    
+                    foreach($nodo_i["tags"] as $tag_i)
+                        $tags_i[] = $tag_i->term_id;
+                    
+                    foreach($nodo_j["tags"] as $tag_j)
+                        $tags_j[] = $tag_j->term_id;
                         
-                    if(!in_array($edge, $links_index) && $nodo_i['id'] != $nodo_j['id'] && $prob == 1)
+                    $tagsComunes = array_intersect($tags_i, $tags_j);
+                        
+                    // Verifico si debo escribir la linea
+                    if(!in_array($edge, $links_index) && $nodo_i['id'] != $nodo_j['id'] && $tagsComunes > 5)
                     {
                         // Agregamos el link
                         $links_array[] = array(
                             'source' => $nodo_i['id'],
                             'target' => $nodo_j['id'],
-                            'value' => rand(1,10)
+                            'value' => count($tagsComunes)
                         );
                         
                         // Agregamos la flecha creada
                         $links_index = array($nodo_i['id'], $nodo_j['id']);
                     }
-                    
-                    $prob = rand(0,5);
                 }
             }
             
@@ -125,6 +136,8 @@ add_action( 'pre_get_posts', function ($query ){
                         'group'=> rand(1,5),
                         'titulo' => get_the_title(), 
                         'bajada' => $bajada,
+                        'categories' => get_the_category(),
+                        'tags' => wp_get_post_tags(get_the_ID()),
                         'img_path' => wp_get_attachment_image_src( get_post_thumbnail_id(), array(100,100) ),
                         'path' => get_permalink(),
                         'fecha' => array('dia' => get_the_time('d'), 'mes'=> get_the_time('M'), 'agno' => get_the_time('Y')),

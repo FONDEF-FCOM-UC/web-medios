@@ -4,8 +4,8 @@ var width = $('#fcom-mapa').width(),
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(150)
+    .charge(-200)
+    .linkDistance(400)
     .size([width, height]);
 
 var svg = d3.select("#fcom-mapa").append("svg")
@@ -30,7 +30,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
       .data(graph.nodes)
     .enter().append("circle")
       .attr("class", "node")
-      .attr("r", 5)
+      .attr("r", 10)
       .style("fill", function(d) { return color(d.group); })
       .on("mouseover", function (d) {
         
@@ -54,7 +54,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
                     .style("opacity", 1)
                     .html(html_str)
                     .style("left", (d.x + 120 + "px"))
-                    .style("top", (d.y - 45 + "px"));
+                    .style("top", ( (100 + 0.5 * (d.y - 45)) + "px"));
       })
       .on("mouseout", function() {
           // Remove the info text on mouse out.
@@ -74,7 +74,9 @@ d3.json("fcom-maps/json/data", function(error, graph) {
             $(".noticias").empty();
             $(".noticias").append('<h2>'+json.titulo+'</h2>');
             $(".noticias").append('<p class="bajada">'+json.bajada+'</p>');
-            $(".noticias").append('<div class="meta"><a href="'+json.path+'" class="btn btn-info btn-sm">Ver más</a> Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+'</div>');
+            $(".noticias").append('<div class="meta"><a href="'+json.path+'" class="btn btn-info btn-sm">Ver más</a> Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+' </div>');
+            for(var i = 0; i < json.tags.length; i++)
+            	$(".noticias .meta").append(json.tags[i].name);
             $(".noticias").append('<hr>');
             $(".noticias").append(json.content);
          });
@@ -86,12 +88,12 @@ d3.json("fcom-maps/json/data", function(error, graph) {
     
   force.on("tick", function() {
     link.attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
+        .attr("y1", function(d) { return 100 + 0.5 * d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+        .attr("y2", function(d) { return 100 + 0.5 * d.target.y; });
 
     node.attr("cx", function(d) { return d.x; })
-        .attr("cy", function(d) { return d.y; });
+        .attr("cy", function(d) { return 100 + 0.5 * d.y; });
   });
   
 });

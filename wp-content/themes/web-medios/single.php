@@ -20,11 +20,15 @@
                                     the_content('');
                                     $more = 1; ?>
 							    </div>
-    							<p class="meta"><?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time></p>
-						    </div>
-						    <div class="autor">
-						        <?php echo get_avatar( get_the_author_meta( 'ID' ), 38, '', '', array('class' => 'img-circle')); ?>
-						        <?php the_author_posts_link(); ?>
+							    <div class="meta">
+							        <div class="foto">
+						                <?php echo get_avatar( get_the_author_meta( 'ID' ), 38, '', '', array('class' => 'img-circle')); ?>
+						                <?php the_author_posts_link(); ?>
+        							</div>
+        							<div class="fecha">
+        							    <?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time>
+    							    </div>
+						        </div>
 						    </div>
 						</header> <!-- end article header -->
 						<section class="post_content clearfix" itemprop="articleBody">

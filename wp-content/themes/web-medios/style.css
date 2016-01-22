@@ -371,6 +371,27 @@ zoom: 1;
 
 .page-header{
     margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.page-header .meta {
+    position: relative;
+    height: 50px;
+}
+
+.page-header .foto {
+    display: inline;
+    position: absolute;
+    left: 0;
+}
+
+.page-header .fecha {
+    font-size: 12px;
+    font-style: italic;
+    display: inline;
+    position: absolute;
+    right: 0;
+    bottom: 12px;
 }
 
 .infobox {
