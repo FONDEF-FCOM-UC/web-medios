@@ -76,7 +76,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
             $(".noticias").append('<p class="bajada">'+json.bajada+'</p>');
             $(".noticias").append('<div class="meta"><a href="'+json.path+'" class="btn btn-info btn-sm">Ver más</a> Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+' </div>');
             for(var i = 0; i < json.tags.length; i++)
-            	$(".noticias .meta").append(json.tags[i].name);
+            	$(".noticias .meta").append('<span class="label label-default">'+json.tags[i].name+'</span>');
             $(".noticias").append('<hr>');
             $(".noticias").append(json.content);
          });

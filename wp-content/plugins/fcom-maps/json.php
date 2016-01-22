@@ -76,7 +76,7 @@ add_action( 'pre_get_posts', function ($query ){
                     $tagsComunes = array_intersect($tags_i, $tags_j);
                         
                     // Verifico si debo escribir la linea
-                    if(!in_array($edge, $links_index) && $nodo_i['id'] != $nodo_j['id'] && $tagsComunes > 5)
+                    if(!in_array($edge, $links_index) && $nodo_i['id'] != $nodo_j['id'] && count($tagsComunes) > 0)
                     {
                         // Agregamos el link
                         $links_array[] = array(
