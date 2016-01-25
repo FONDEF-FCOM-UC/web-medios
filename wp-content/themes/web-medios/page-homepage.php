@@ -16,50 +16,54 @@ Template Name: Homepage
 		
 		<!-- Noticias laterales -->
 		<section class="row frontpage">
-		    <?php 
-            $args = array(
-                'post_type' => 'post', 
-                'order' => 'DESC', 
-                'posts_per_page' => 6,
-                'post__not_in' => get_rolling_posts(),
-                'meta_query' => array(
-                    array(
-                     'key' => '_thumbnail_id',
-                     'compare' => 'EXISTS'
-                    ),
-                )
-            );
+		    <?php $secciones = array('kmcero' => "Km Cero", 'senal-uc' => "Señal UC", 'radiouc' => "Radio UC") ?>
+		    <?php foreach($secciones as $key => $value): ?>
+	        <div class="col-sm-4 featured-new">
+	            <div class="titulo"><?php echo $value ?></div>
+	            <?php 
+                $args = array(
+                    'post_type' => 'post', 
+                    'order' => 'DESC', 
+                    'posts_per_page' => 4,
+                    'category_name' => $key,
+                    'post__not_in' => get_rolling_posts(),
+                    'meta_query' => array(
+                        array(
+                         'key' => '_thumbnail_id',
+                         'compare' => 'EXISTS'
+                        ),
+                    )
+                );
 
-            $q = new WP_Query( $args );
+                $q = new WP_Query( $args );
 
-		    if ($q->have_posts()) {
-		        $i = 0; // Detectamos el primer post
-	        ?>
-	        <?php 
-		        while ($q->have_posts()) : $q->the_post();
-		        $categories = get_the_category();
-		        ?>
-	        <div class="col-sm-6 featured-new">
+		        if ($q->have_posts()) {
+		            $i = 0; // Detectamos el primer post
+	            ?>
+	            <?php 
+		            while ($q->have_posts()) : $q->the_post();
+		            $tags = wp_get_post_tags(get_the_ID());
+		            ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 				    <?php if ( has_post_thumbnail() ) : ?>
 				    <div class="thumb">
-				        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
+				        <span class="frontpage-tag-main"><?php echo $tags[0]->name ?></span>
 				        <?php the_post_thumbnail('large');  ?>
 				    </div>
 				    <?php endif; ?>
 				    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 				    <p><?php the_excerpt(); ?></p>
 				</article>
+				<?php  
+			        $i++; 
+			        $post_ids[] = get_the_ID();?>
+			    <?php endwhile; 
+			        wp_reset_postdata();
+			        add_rolling_posts($post_ids);
+			    ?>	
+			    <?php }; ?>
 			</div>
-			<?php  
-			    $i++; 
-			    $post_ids[] = get_the_ID();?>
-			<?php endwhile; 
-			    wp_reset_postdata();
-			    add_rolling_posts($post_ids);
-			?>	
-			</div>
-			<?php }; ?>
+			<?php endforeach; ?>
 		</section>
 		
 	</div> <!-- end #main -->

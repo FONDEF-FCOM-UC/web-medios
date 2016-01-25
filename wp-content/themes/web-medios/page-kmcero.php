@@ -31,12 +31,12 @@ Template Name: Portada KmCero
 				        <div class="col-sm-6">
 				        <?php 
 					        while ($q->have_posts()) : $q->the_post();
-					        $categories = get_the_category();
+					        $tags = wp_get_post_tags(get_the_ID());
 					        if($i == 0) {
 					        ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							    <div style="position:relative">
-							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
+							        <span class="frontpage-tag-main"><?php echo $tags[0]->name ?></span>
 							        <?php the_post_thumbnail('slider-thumb');  ?>
 							    </div>
 							    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>

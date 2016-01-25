@@ -114,6 +114,7 @@ class FCOM_UC_Widget_News_List extends WP_Widget {
 			    <?php $post_ids[] = get_the_ID(); ?>
 				<?php if ( 1 === $i ) : ?>
 				<div class="col-sm-4">
+				    <div class="titulo">Web de Medios</div>
 					<article <?php post_class(); ?>>
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<div class="entry-meta">
