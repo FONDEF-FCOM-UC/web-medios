@@ -29,7 +29,17 @@ add_action( 'pre_get_posts', function ($query ){
                     
                     /*foreach($categories as $category)
                         $grupo .= $category->term_id;*/
-                    $grupo = $categories[0]->term_id;
+                        
+                    // Buscamos la categoria
+                    $parent = $categories[0]->category_parent;
+                    
+                    if($parent) 
+                        $catID = $parent->term_id;
+                    else
+                        $catID = $categories[0]->term_id;
+                    
+                    // Color
+                    $grupo = $catID;
                                   
                     //crea el nodo
                     $nodos_array[] = array(
