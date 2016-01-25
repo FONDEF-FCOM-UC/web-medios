@@ -92,6 +92,20 @@
 
 .tooltip.story .noticias .meta {
     font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.tooltip.story .noticias .label{
+    display: inline-block;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.tooltip.story hr {
+    margin: 10px;
+    border: 0;
+    background-color: #fff;
+    height: 1px;
 }
 
 .btn, .btn-sm {

@@ -74,11 +74,17 @@ d3.json("fcom-maps/json/data", function(error, graph) {
             $(".noticias").empty();
             $(".noticias").append('<h2>'+json.titulo+'</h2>');
             $(".noticias").append('<p class="bajada">'+json.bajada+'</p>');
-            $(".noticias").append('<div class="meta"><a href="'+json.path+'" class="btn btn-info btn-sm">Ver más</a> Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+' </div>');
-            for(var i = 0; i < json.tags.length; i++)
-            	$(".noticias .meta").append('<span class="label label-default">'+json.tags[i].name+'</span>');
-            $(".noticias").append('<hr>');
-            $(".noticias").append(json.content);
+            $(".noticias").append('<div class="meta"></div>');
+            $(".noticias .meta").append('Publicado el '+json.fecha.dia+' '+json.fecha.mes+' '+json.fecha.agno+ '<br>');
+            for(var i = 0; i < json.tags.length; i++){
+        	    $(".noticias .meta").append('<a class="label label-default" href="tag/'+json.tags[i].slug+'">'+json.tags[i].name+'</a>');
+            }
+            //$(".noticias .meta").append('<hr>');
+            $(".noticias .meta").append('<a href="'+json.path+'" class="btn btn-info btn-sm" style="width: 100%; margin: 10px 0;">Ver más</a>');
+            //$(".noticias").append('<hr>');
+            //$(".noticias").append(json.content);
+            if(json.img_path[0]) 
+                $(".noticias").append('<img src="'+json.img_path[0]+'" style="width: 357px;">');
          });
 	  })
       .call(force.drag);

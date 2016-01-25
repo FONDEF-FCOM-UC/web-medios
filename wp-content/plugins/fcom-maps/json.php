@@ -39,7 +39,7 @@ add_action( 'pre_get_posts', function ($query ){
                         'titulo' => get_the_title(), 
                         'bajada' => get_the_excerpt(),
                         'tags' => wp_get_post_tags(get_the_ID()),
-                        'img_path' => wp_get_attachment_image_src( get_post_thumbnail_id(), array(100,100) ),
+                        'img_path' => wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' ),
                         'path' => get_permalink(),
                         'fecha' => array('dia' => get_the_time('d'), 'mes'=> get_the_time('M'), 'agno' => get_the_time('Y'))
                         );
