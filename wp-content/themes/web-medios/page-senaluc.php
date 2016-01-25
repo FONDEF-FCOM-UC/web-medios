@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Portada KmCero
+Template Name: Portada Señal UC
 */
 ?>
 
@@ -8,7 +8,7 @@ Template Name: Portada KmCero
             
 			<div id="content" class="clearfix row">
 			    <div class="col-sm-12 clearfix logo">
-			        <img src="http://www.kilometrocero.cl/wp-content/themes/km0/images/logo.png">
+			        <img src="http://www.senaluc.cl/imag/senaluc/logo_senal_uc.png">
 			    </div>
 			    
 				<div id="main" class="col-sm-12 clearfix" role="main">
@@ -22,7 +22,7 @@ Template Name: Portada KmCero
                                 array(
                                     'taxonomy' => 'category',
                                     'field'    => 'term_id',
-                                    'terms'    => 7,
+                                    'terms'    => 6,
                                 ),
                             ),
                         );

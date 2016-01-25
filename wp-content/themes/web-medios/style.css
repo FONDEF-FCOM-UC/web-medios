@@ -141,6 +141,15 @@ a.navbar-brand {
     font-family: 'boxedbold', Arial, sans-serif; 
 }
 
+.frontpage .titulo {
+    font-family: 'boxedbold', Arial, sans-serif; 
+    color: #fff;
+    background-color: #3d7edb;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    padding: 5px 10px;
+}
+
 .frontpage-tag {
     position:absolute; 
     top: 0; 
@@ -237,6 +246,7 @@ footer li {
 
 #main article {
     margin-bottom: 30px;
+    padding: 0 15px;
 }
 
 .wp-caption {
@@ -483,23 +493,40 @@ zoom: 1;
     height: 100%;
 }
 
+.featured-new article {
+    padding: 0 !important;
+}
+
 .featured-new .thumb {
     position:relative;
     max-height: 250px;
     overflow: hidden;
 }
 
-.featured-new h2 {
-   font-family: 'boxedregular', Arial, sans-serif !important; 
+.featured-new .thumb .video {
+    position: absolute;
+    left:0;
+    right:0;
+    top: 80px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 92px;
+    height: 92px;
 }
 
-.featured-new .titulo {
-    font-family: 'boxedbold', Arial, sans-serif; 
-    color: #fff;
-    background-color: #3d7edb;
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    padding: 5px 10px;
+.featured-new .thumb .sound {
+    position: absolute;
+    left:0;
+    right:0;
+    top: 80px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 92px;
+    height: 92px;
+}
+
+.featured-new h2 {
+   font-family: 'boxedregular', Arial, sans-serif !important; 
 }
 
 .no-padding {
@@ -512,4 +539,13 @@ zoom: 1;
 
 .img-circle {
     border-radius: 50%;
+}
+
+.news-fixed {
+    height: 520px;
+    overflow: hidden;
+}
+
+.img-no-padding img {
+    margin-bottom: 0px !important;
 }
