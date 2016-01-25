@@ -54,7 +54,7 @@ d3.json("fcom-maps/json/data", function(error, graph) {
                     .style("opacity", 1)
                     .html(html_str)
                     .style("left", (d.x + 120 + "px"))
-                    .style("top", ( (100 + 0.5 * (d.y - 45)) + "px"));
+                    .style("top", ( (60 + 0.5 * (d.y - 45)) + "px"));
       })
       .on("mouseout", function() {
           // Remove the info text on mouse out.
