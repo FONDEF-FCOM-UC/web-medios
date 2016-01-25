@@ -17,7 +17,7 @@ Template Name: Portada RadioUC
                         $args = array(
                             'post_type' => 'post', 
                             'order' => 'DESC', 
-                            'posts_per_page' => 9,
+                            'posts_per_page' => 8,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'category',
@@ -61,8 +61,9 @@ Template Name: Portada RadioUC
 					    </div>
 					</section>
 					<section class="row frontpage">
+					    <div class="col-sm-8">
 						<?php endif; ?>
-						    <article <?php post_class('clearfix col-sm-4 news-fixed'); ?>>
+						    <article <?php post_class('clearfix col-sm-6 news-fixed'); ?>>
 					            <div style="position:relative">
 					                <?php if($tags[0]->name != ""): ?>
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
@@ -79,6 +80,14 @@ Template Name: Portada RadioUC
 						?>	
 						</div>
 						<?php endif; ?>
+						<div class="col-sm-4">
+						    <a class="twitter-timeline"
+                              data-widget-id="600720083413962752"
+                              href="https://twitter.com/radiouc"
+                              data-screen-name="radiouc"></a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Benjamín Marchant / RadioUC</span> está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivar 4.0 Internacional</a>.<br />Basada en una obra en <a xmlns:dct="http://purl.org/dc/terms/" href="www.radiouc.cl" rel="dct:source">www.radiouc.cl</a>
+						</div>
 					</section> <!-- end article header -->
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->
