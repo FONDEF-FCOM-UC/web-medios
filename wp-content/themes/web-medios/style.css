@@ -198,6 +198,9 @@ a.navbar-brand {
 
 .news-grid .photo {
     margin-bottom: 10px;
+    width: 620px;
+    height: 350px;
+    overflow: hidden;
 }
 
 .news-grid .otras {
