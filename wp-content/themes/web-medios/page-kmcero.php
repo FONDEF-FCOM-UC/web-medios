@@ -41,7 +41,7 @@ Template Name: Portada KmCero
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							    <div style="position:relative">
 							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
-							        <?php the_post_thumbnail('slider-thumb');  ?>
+							        <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('slider-thumb'); ?></a>
 							    </div>
 							    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 							    <p><?php the_excerpt(); ?></p>
@@ -52,7 +52,7 @@ Template Name: Portada KmCero
 						    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 					            <div class="img-no-padding" style="position:relative">
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
-						            <?php the_post_thumbnail('medium');  ?>
+						            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium');  ?></a>
 						        </div>
 						        <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 						    </article>
@@ -67,7 +67,7 @@ Template Name: Portada KmCero
 					                <?php if($tags[0]->name != ""): ?>
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 						            <?php endif; ?>
-						            <?php the_post_thumbnail('medium');  ?>
+						            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium');  ?></a>
 						        </div>
 						        <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 						        <p><?php the_excerpt(); ?></p>
