@@ -17,7 +17,7 @@ Template Name: Portada Señal UC
                         $args = array(
                             'post_type' => 'post', 
                             'order' => 'DESC', 
-                            'posts_per_page' => 9,
+                            'posts_per_page' => 10,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'category',

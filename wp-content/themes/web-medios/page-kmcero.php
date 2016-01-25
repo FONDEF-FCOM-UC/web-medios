@@ -17,7 +17,7 @@ Template Name: Portada KmCero
                         $args = array(
                             'post_type' => 'post', 
                             'order' => 'DESC', 
-                            'posts_per_page' => 9,
+                            'posts_per_page' => 10,
                             'tax_query' => array(
                                 array(
                                     'taxonomy' => 'category',
@@ -50,7 +50,7 @@ Template Name: Portada KmCero
 						<div class="col-sm-4">
 						<?php elseif($i > 0 and $i < 4): ?>
 						    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					            <div class="img-no-padding" style="position:relative">
+					            <div class="img-no-padding image" style="position:relative; height: 120px; overflow:hidden;">
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 						            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium');  ?></a>
 						        </div>
@@ -63,7 +63,7 @@ Template Name: Portada KmCero
 					<section class="row frontpage">
 						<?php endif; ?>
 						    <article <?php post_class('clearfix col-sm-4 news-fixed'); ?>>
-					            <div style="position:relative">
+					            <div class="image">
 					                <?php if($tags[0]->name != ""): ?>
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 						            <?php endif; ?>
