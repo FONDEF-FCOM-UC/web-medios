@@ -51,9 +51,9 @@ Template Name: Homepage
 		                <div class="thumb">
 		                    <a href="<?php echo the_permalink(); ?>">
 		                        <?php if($key == "senal-uc"):?>
-		                        <img class="video" src="<?php echo get_bloginfo('template_directory');?>/images/video-play.png">
+		                        <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/video-play.png">
 		                        <?php elseif($key == "radiouc"): ?>
-		                        <img class="sound" src="<?php echo get_bloginfo('template_directory');?>/images/sound-play.png">
+		                        <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/sound-play.png">
 		                        <?php endif; ?>
 		                        <?php if($categories[0]->name): ?>
 		                        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>

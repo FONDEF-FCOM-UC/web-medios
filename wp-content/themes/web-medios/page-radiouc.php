@@ -41,7 +41,10 @@ Template Name: Portada RadioUC
 							<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
 							    <div style="position:relative">
 							        <span class="frontpage-tag-main"><?php echo $categories[0]->name ?></span>
-							        <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('slider-thumb'); ?></a>
+							        <a href="<?php echo the_permalink(); ?>">
+							            <?php the_post_thumbnail('slider-thumb'); ?>
+						                <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/sound-play.png">
+						            </a>
 							    </div>
 							    <a href="<?php echo the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
 							    <p><?php the_excerpt(); ?></p>
@@ -50,9 +53,12 @@ Template Name: Portada RadioUC
 						<div class="col-sm-4">
 						<?php elseif($i > 0 and $i < 4): ?>
 						    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					            <div class="img-no-padding" style="position:relative">
+					            <div class="img-no-padding image" style="position:relative; height: 120px; overflow:hidden;">
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
-						            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+						            <a href="<?php echo the_permalink(); ?>">
+						                <?php the_post_thumbnail('medium'); ?>
+						                <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/sound-play.png">
+					                </a>
 						        </div>
 						        <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 						    </article>
@@ -64,11 +70,14 @@ Template Name: Portada RadioUC
 					    <div class="col-sm-8">
 						<?php endif; ?>
 						    <article <?php post_class('clearfix col-sm-6 news-fixed'); ?>>
-					            <div style="position:relative">
+					            <div class="image">
 					                <?php if($tags[0]->name != ""): ?>
 						            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 						            <?php endif; ?>
-						            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+						            <a href="<?php echo the_permalink(); ?>">
+						                <?php the_post_thumbnail('medium'); ?>
+        		                        <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/sound-play.png">
+						            </a>
 						        </div>
 						        <a href="<?php echo the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 						        <p><?php the_excerpt(); ?></p>
