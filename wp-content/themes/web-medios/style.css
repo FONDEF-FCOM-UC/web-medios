@@ -83,6 +83,8 @@ a.navbar-brand {
 
 .medio-menu > li > a  {
     color: #000;
+    padding-right: 7px;
+    padding-left: 7px;
 }
 
 .medio-bar {
@@ -637,8 +639,6 @@ zoom: 1;
     height: 158px;
     overflow-y: hidden;
 }
-
-
 
 .img-no-padding img {
     margin-bottom: 0px !important;

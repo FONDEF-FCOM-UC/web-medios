@@ -125,7 +125,7 @@ class FCOM_UC_Widget_News_List extends WP_Widget {
 				</div>
 				<div class="col-md-8">
 				    <?php if ( has_post_thumbnail() ) : ?>
-					<div class="row photo">
+					<div class="photo">
 					    <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/web-play.png">
 					    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
 				    </div>
