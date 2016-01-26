@@ -6,6 +6,8 @@ var color = d3.scale.category20();
 var force = d3.layout.force()
     .charge(-200)
     .linkDistance(400)
+    .alpha(0.1)
+    .friction(0.1)
     .size([width, height]);
 
 var svg = d3.select("#fcom-mapa").append("svg")

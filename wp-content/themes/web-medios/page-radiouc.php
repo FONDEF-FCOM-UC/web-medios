@@ -98,6 +98,81 @@ Template Name: Portada RadioUC
                             <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Benjamín Marchant / RadioUC</span> está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivar 4.0 Internacional</a>.<br />Basada en una obra en <a xmlns:dct="http://purl.org/dc/terms/" href="www.radiouc.cl" rel="dct:source">www.radiouc.cl</a>
 						</div>
 					</section> <!-- end article header -->
+					<section class="row programas radio">
+					    <div class="titulo">Programas</div>
+					    <div class="col-sm-3">
+					        <h2>Actualidad</h2>
+					        <div class="programa b1">
+					            Acceso Directo
+					        </div>
+					        <div class="programa b2">
+					            Miradas UC
+					        </div>
+					    </div>
+					    <div class="col-sm-6">
+					        <h2>Cultura y Entretenimiento</h2>
+					        <div class="programa b4">
+					            Hablando en Serie
+					        </div>
+					        <div class="programa b3">
+					            Hablemos de Historia
+					        </div>
+					        <div class="programa b1">
+					            Santiago a Diario
+					        </div>
+					        <div class="programa b5">
+					            La Séptima Estación
+					        </div>
+					        <div class="programa b1">
+					            Conexión Patio Scout
+					        </div>
+					        <div class="programa b2">
+					            Módulo 2
+					        </div>
+					        <div class="programa b4">
+					            Sólo Teatro 
+					        </div>
+				        </div>
+					    <div class="col-sm-3">
+					        <h2>Deportes</h2>
+					        <div class="programa b3">
+					            Tercer Saque
+					        </div>
+					        <div class="programa b4">
+					            Jugo de Pelotas
+					        </div>
+					        <div class="programa b2">
+					            Gambeta y guitarra
+					        </div>
+					    </div>
+					    <div class="col-sm-5">
+					        <h2>Música</h2> 
+					        <div class="programa b1">
+					            Producto Nacional
+					        </div>
+					        <div class="programa b5">
+					            La Rumba
+					        </div>
+					        <div class="programa b2">
+					            Modo Aleatorio
+					        </div>
+					        <div class="programa b5">
+					            Generación Británica
+					        </div>
+				        </div>
+					    <div class="col-sm-7">
+					        <h2>Vida Universitaria</h2>
+					        <div class="programa b2">
+					            Plan Común
+					        </div>
+					        <div class="programa b3">
+					            Página 33
+					        </div>
+					        <div class="programa b4">
+					            Encuentro con
+					        </div>
+				        </div>
+					</section>
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->
 

@@ -89,32 +89,17 @@ class FCOM_UC_Widget_News_List extends WP_Widget {
 ?>
 		<?php echo $args['before_widget']; ?>
 		<div id="destacado" class="<?php echo esc_attr( $category_style ); ?>">
-		<?php if ( $title ) : ?>
-			<?php echo $args['before_title']; ?>
-					<?php if ( 0 != $cat_id ) : ?>
-						<a href="<?php echo esc_url( get_category_link( $cat_id ) ); ?>"><?php echo wp_kses_post( $title ); ?></a>
-					<?php else : ?>
-						<?php echo wp_kses_post( $title ); ?>
-					<?php endif; ?>
-				<?php echo $args['after_title']; ?>
-			<?php if ( $show_sub_cat && ( 0 != $cat_id ) ) : ?>
-				<?php $sub_categories = get_categories( 'hide_empty=0&child_of='.$cat_id ); ?>
-				<?php if ( $sub_categories ) : ?>
-				<ul class="sub-categories list-inline hidden-xs">
-					<?php foreach ( $sub_categories as $sub_category ) { ?>
-						<li><a href="<?php echo esc_url( get_category_link( $sub_category->term_id ) ); ?>"><?php echo wp_kses_post( $sub_category->name ); ?></a></li>
-					<?php } ?>
-				</ul>
-				<?php endif; ?>
-			<?php endif; ?>
-		<?php endif; ?>
 		    <div class="news-grid row">
 			<?php $i = 1; ?>
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 			    <?php $post_ids[] = get_the_ID(); ?>
 				<?php if ( 1 === $i ) : ?>
 				<div class="col-sm-4">
+				    <?php if ( $title ) : ?>
+				    <div class="titulo"><?php echo wp_kses_post( $title ); ?></div>
+				    <?php else: ?>
 				    <div class="titulo">Web de Medios</div>
+				    <?php endif; ?>
 					<article <?php post_class(); ?>>
 						<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 						<div class="entry-meta">
@@ -141,6 +126,7 @@ class FCOM_UC_Widget_News_List extends WP_Widget {
 				<div class="col-md-8">
 				    <?php if ( has_post_thumbnail() ) : ?>
 					<div class="row photo">
+					    <img class="media" src="<?php echo get_bloginfo('template_directory');?>/images/web-play.png">
 					    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a>
 				    </div>
 					<?php endif; ?>

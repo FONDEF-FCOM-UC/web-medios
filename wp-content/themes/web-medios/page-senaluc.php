@@ -86,9 +86,31 @@ Template Name: Portada Señal UC
 						<?php endwhile; 
 						    wp_reset_postdata();
 						?>	
-						</div>
 						<?php endif; ?>
 					</section> <!-- end article header -->
+					<section class="row programas">
+					    <div class="titulo">Programas</div>
+					    <div class="col-sm-3 programa">
+					        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/56610497ddd11.jpg"><br>
+					        <h2>Miradas UC</h2>
+					    </div>
+					    <div class="col-sm-3 programa">
+					        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/566104c9bd01e.png"><br>
+					        <h2>Norte Centro Sur</h2>
+					    </div>
+					    <div class="col-sm-3 programa">
+					        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/566104dcee241.jpg"><br>
+					        <h2>Los Especialistas</h2>
+					    </div>
+					    <div class="col-sm-3 programa">
+					        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/56610482cbfbe.png"><br>
+					        <h2>Viernes de Medios</h2>
+					    </div>
+					    <div class="col-sm-3 programa">
+					        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/5654e8cc5a1ac.png"><br>
+					        <h2>Día F</h2>
+					    </div>
+					</section>
 				</div> <!-- end #main -->
 			</div> <!-- end #content -->
 
