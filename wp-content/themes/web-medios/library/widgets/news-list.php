@@ -89,7 +89,7 @@ class FCOM_UC_Widget_News_List extends WP_Widget {
 ?>
 		<?php echo $args['before_widget']; ?>
 		<div id="destacado" class="<?php echo esc_attr( $category_style ); ?>">
-		    <div class="news-grid row">
+		    <div class="news-grid clearfix">
 			<?php $i = 1; ?>
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 			    <?php $post_ids[] = get_the_ID(); ?>
