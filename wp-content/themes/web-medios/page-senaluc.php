@@ -11,8 +11,11 @@ Template Name: Portada Señal UC
 			        <div class="col-sm-2 logo">
 			            <img src="<?php echo get_bloginfo('template_directory');?>/images/senaluc.png">
 			        </div>
-			        <div class="col-sm-10">
+			        <div class="col-sm-8">
     					<?php wp_bootstrap_senal_uc(); // Adjust using Menus in Wordpress Admin ?>
+			        </div>
+			        <div class="col-sm-2">
+			            <a target="_blank" title="Señal en Vivo" href="http://www.senaluc.cl" class="popup"><span aria-hidden="true" class="glyphicon glyphicon-play-circle btn-lg senal-icono"></span>Señal en vivo</a>
 			        </div>
 			    </div>
 				<div class="row frontpage">

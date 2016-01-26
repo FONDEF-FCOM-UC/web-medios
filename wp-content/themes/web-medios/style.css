@@ -647,3 +647,17 @@ zoom: 1;
 .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+
+.radio-icono {
+    padding-left: 10px;
+    padding-right: 5px; 
+    padding-top: 0;
+    font-size: 25px;
+}
+
+.senal-icono {
+    font-size: 30px;
+    padding-left: 0;
+    padding-right: 5px;
+    padding-top: 0;
+}

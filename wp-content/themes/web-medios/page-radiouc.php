@@ -11,8 +11,13 @@ Template Name: Portada RadioUC
 			        <div class="col-sm-2 logo">
 			            <img src="<?php echo get_bloginfo('template_directory');?>/images/radiouc.png">
 			        </div>
-			        <div class="col-sm-10">
+			        <div class="col-sm-6">
     					<?php wp_bootstrap_radio_uc(); // Adjust using Menus in Wordpress Admin ?>
+			        </div>
+			        <div class="col-sm-4">
+			            <a target="_blank" title="Escucha Señal 1" href="http://www.radiouc.cl/play.html" class="popup"><span aria-hidden="true" class="glyphicon glyphicon-volume-up btn-lg radio-icono"></span>Señal 1</a>
+			            <a target="_blank" title="Escucha Señal 2" href="http://www.radiouc.cl/play2.html" class="popup"><span aria-hidden="true" class="glyphicon glyphicon-headphones btn-lg radio-icono"></span>Señal 2</a>
+			            <a target="_blank" title="Radio UC Se Ve" href="http://www.ustream.tv/channel/radiouc-tv" class="popup"><span aria-hidden="true" class="glyphicon glyphicon-play-circle btn-lg radio-icono"></span>SeVe</a>
 			        </div>
 			    </div>
 				<div class="row frontpage">
@@ -182,5 +187,12 @@ Template Name: Portada RadioUC
 			        </div>
 				</div>
 			</div> <!-- end #content -->
-
+        <script>
+        jQuery(document).ready(function($) {
+            $('.popup').click(function (event) {
+            event.preventDefault();
+            window.open($(this).attr("href"), "popupWindow", "width=600,height=600,scrollbars=yes");
+        });
+        });
+        </script>
 <?php get_footer(); ?>
