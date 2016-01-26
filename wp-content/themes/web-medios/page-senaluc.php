@@ -59,7 +59,7 @@ Template Name: Portada Señal UC
 					<div class="col-sm-4">
 					<?php elseif($i > 0 and $i < 4): ?>
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-				            <div class="img-no-padding image">
+				            <div class="img-no-padding image sidenews">
 					            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 					            <a href="<?php echo the_permalink(); ?>">
 					                <?php if ( ( function_exists('has_post_thumbnail') ) && ( has_post_thumbnail() ) ): 

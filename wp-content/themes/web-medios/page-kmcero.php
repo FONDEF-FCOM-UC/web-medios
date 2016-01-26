@@ -53,7 +53,7 @@ Template Name: Portada KmCero
 					<div class="col-sm-4">
 					<?php elseif($i > 0 and $i < 4): ?>
 					    <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-				            <div class="img-no-padding image">
+				            <div class="img-no-padding image sidenews">
 					            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 					            <a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail('medium');  ?></a>
 					        </div>

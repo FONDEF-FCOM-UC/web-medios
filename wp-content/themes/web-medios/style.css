@@ -162,6 +162,20 @@ a.navbar-brand {
     overflow: hidden;
 }
 
+.frontpage .main-photo img {
+    max-width: 600px;
+}
+
+.sidenews {
+    position:relative; 
+    height: 120px; 
+    overflow:hidden;
+}
+
+.sidenews img {
+    max-width: 290px;
+}
+
 .frontpage-tag-main {
     position:absolute; 
     top: 0; 
