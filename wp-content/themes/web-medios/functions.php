@@ -76,7 +76,10 @@ if( !function_exists( "wp_bootstrap_theme_support" ) ) {
     register_nav_menus(                      // wp3+ menus
       array( 
         'main_nav' => 'The Main Menu',   // main nav in header
-        'footer_links' => 'Footer Links' // secondary nav in footer
+        'footer_links' => 'Footer Links', // secondary nav in footer
+        'senal_uc' => 'Menú Señal UC', // secondary nav in footer
+        'radio_uc' => 'Menú Radio UC', // secondary nav in footer
+        'kmcero' => 'Menú Kilómetro Cero', // secondary nav in footer
       )
     );  
   }
@@ -110,6 +113,48 @@ function wp_bootstrap_footer_links() {
   );
 }
 
+function wp_bootstrap_kmcero() {
+  // Display the WordPress menu if available
+  wp_nav_menu( 
+    array( 
+      'menu' => 'kmcero', /* menu name */
+      'menu_class' => 'nav navbar-nav medio-menu',
+      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'container' => 'false', /* container class */
+      'fallback_cb' => 'wp_bootstrap_kmcero_fallback', /* menu fallback */
+      'walker' => new Bootstrap_walker()
+    )
+  );
+}
+
+function wp_bootstrap_radio_uc() {
+  // Display the WordPress menu if available
+  wp_nav_menu( 
+    array( 
+      'menu' => 'radio_uc', /* menu name */
+      'menu_class' => 'nav navbar-nav medio-menu',
+      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'container' => 'false', /* container class */
+      'fallback_cb' => 'wp_bootstrap_radio_uc_fallback', /* menu fallback */
+      'walker' => new Bootstrap_walker()
+    )
+  );
+}
+
+function wp_bootstrap_senal_uc() {
+  // Display the WordPress menu if available
+  wp_nav_menu( 
+    array( 
+      'menu' => 'senal_uc', /* menu name */
+      'menu_class' => 'nav navbar-nav medio-menu',
+      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'container' => 'false', /* container class */
+      'fallback_cb' => 'wp_bootstrap_senal_uc_fallback', /* menu fallback */
+      'walker' => new Bootstrap_walker()
+    )
+  );
+}
+
 // this is the fallback for header menu
 function wp_bootstrap_main_nav_fallback() { 
   /* you can put a default here if you like */ 
@@ -117,6 +162,21 @@ function wp_bootstrap_main_nav_fallback() {
 
 // this is the fallback for footer menu
 function wp_bootstrap_footer_links_fallback() { 
+  /* you can put a default here if you like */ 
+}
+
+// this is the fallback for KmCero's menu
+function wp_bootstrap_kmcero_fallback() { 
+  /* you can put a default here if you like */ 
+}
+
+// this is the fallback for Radio UC's menu
+function wp_bootstrap_radio_uc_fallback() { 
+  /* you can put a default here if you like */ 
+}
+
+// this is the fallback for Señal UC's menu
+function wp_bootstrap_senal_uc_fallback() { 
   /* you can put a default here if you like */ 
 }
 

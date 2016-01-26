@@ -81,6 +81,14 @@ a.navbar-brand {
     font-size: 12px;
 } 
 
+.medio-menu > li > a  {
+    color: #000;
+}
+
+.medio-bar {
+    margin-bottom: 10px;
+}
+
 /*! mapa */
 #mapa {
     background-color: #666;
@@ -134,9 +142,22 @@ a.navbar-brand {
     letter-spacing: -0.003em;
 }
 
+.post .image {
+    width: 100%;
+    position:relative; 
+    height: 120px; 
+    overflow:hidden;
+}
+
 .frontpage h4 {
     font-family: 'boxedbold', Arial, sans-serif; 
     color: #555559; 
+}
+
+.frontpage .main-photo {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .frontpage-tag-main {
@@ -616,6 +637,7 @@ zoom: 1;
     height: 158px;
     overflow-y: hidden;
 }
+
 
 
 .img-no-padding img {
