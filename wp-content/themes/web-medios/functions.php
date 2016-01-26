@@ -119,7 +119,7 @@ function wp_bootstrap_kmcero() {
     array( 
       'menu' => 'kmcero', /* menu name */
       'menu_class' => 'nav navbar-nav medio-menu',
-      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'theme_location' => 'kmcero', /* where in the theme it's assigned */
       'container' => 'false', /* container class */
       'fallback_cb' => 'wp_bootstrap_kmcero_fallback', /* menu fallback */
       'walker' => new Bootstrap_walker()
@@ -133,7 +133,7 @@ function wp_bootstrap_radio_uc() {
     array( 
       'menu' => 'radio_uc', /* menu name */
       'menu_class' => 'nav navbar-nav medio-menu',
-      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'theme_location' => 'radio_uc', /* where in the theme it's assigned */
       'container' => 'false', /* container class */
       'fallback_cb' => 'wp_bootstrap_radio_uc_fallback', /* menu fallback */
       'walker' => new Bootstrap_walker()
@@ -147,7 +147,7 @@ function wp_bootstrap_senal_uc() {
     array( 
       'menu' => 'senal_uc', /* menu name */
       'menu_class' => 'nav navbar-nav medio-menu',
-      'theme_location' => 'main_nav', /* where in the theme it's assigned */
+      'theme_location' => 'senal_uc', /* where in the theme it's assigned */
       'container' => 'false', /* container class */
       'fallback_cb' => 'wp_bootstrap_senal_uc_fallback', /* menu fallback */
       'walker' => new Bootstrap_walker()

@@ -15,7 +15,6 @@ Template Name: Portada RadioUC
     					<?php wp_bootstrap_radio_uc(); // Adjust using Menus in Wordpress Admin ?>
 			        </div>
 			    </div>
-			    
 				<div class="row frontpage">
 				    <?php 
                     $args = array(

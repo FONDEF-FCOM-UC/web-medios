@@ -15,7 +15,6 @@ Template Name: Portada KmCero
     					<?php wp_bootstrap_kmcero(); // Adjust using Menus in Wordpress Admin ?>
 			        </div>
 			    </div>
-			    
 				<div class="row frontpage">
 			    <?php 
                     $args = array(
