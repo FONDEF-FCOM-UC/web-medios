@@ -40,13 +40,33 @@ if( !function_exists( "wp_bootstrap_rss_version" ) ) {
 add_filter( 'the_generator', 'wp_bootstrap_rss_version' );
 
 // Remove the […] in a Read More link
-if( !function_exists( "wp_bootstrap_excerpt_more" ) ) {  
-  function wp_bootstrap_excerpt_more( $more ) {
-    global $post;
-    return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
-  }
+if( !function_exists("wp_bootstrap_end_with_sentence")) {  
+    function wp_bootstrap_end_with_sentence( $excerpt ) {
+      $allowed_ends = array('.', '!', '?', '...');
+      $number_sentences = 2;
+      $excerpt_chunk = $excerpt;
+
+      for($i = 0; $i < $number_sentences; $i++){
+          $lowest_sentence_end[$i] = 100000000000000000;
+          foreach( $allowed_ends as $allowed_end)
+          {
+            $sentence_end = strpos( $excerpt_chunk, $allowed_end);
+            if($sentence_end !== false && $sentence_end < $lowest_sentence_end[$i]){
+                $lowest_sentence_end[$i] = $sentence_end + strlen( $allowed_end );
+            }
+            $sentence_end = false;
+          }
+
+          $sentences[$i] = substr( $excerpt_chunk, 0, $lowest_sentence_end[$i]);
+          $excerpt_chunk = substr( $excerpt_chunk, $lowest_sentence_end[$i]);
+      }
+    
+      $text = implode('', $sentences);
+      return $text;
+      //return $text.'<br> <a href="'. get_permalink($post->ID) . '" class="btn btn-primary more-link" title="Read '.get_the_title($post->ID).'">Leer más</a>';
+    }
 }
-add_filter('excerpt_more', 'wp_bootstrap_excerpt_more');
+add_filter('get_the_excerpt', 'wp_bootstrap_end_with_sentence');
 
 // Add WP 3+ Functions & Theme Support
 if( !function_exists( "wp_bootstrap_theme_support" ) ) {  
