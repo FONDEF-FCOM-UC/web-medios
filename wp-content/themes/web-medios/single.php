@@ -14,7 +14,7 @@
 							
 							<div class="page-header">
 							    <div class="categories">
-							    <?php the_category('&bull;'); ?>
+							    <?php the_category(''); ?>
 							    </div>
 							    <h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
 							    <div class="excerpt">
