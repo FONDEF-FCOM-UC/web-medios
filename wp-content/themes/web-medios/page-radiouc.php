@@ -79,6 +79,7 @@ Template Name: Portada RadioUC
 					<?php if($i == 4): ?>
 				    </div>
 				</div>
+				<hr>
 				<div class="row frontpage">
 				    <div class="col-sm-8">
 					<?php endif; ?>
@@ -110,7 +111,15 @@ Template Name: Portada RadioUC
 
                         <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Esta obra de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Benjamín Marchant / RadioUC</span> está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Licencia Creative Commons Atribución-NoComercial-SinDerivar 4.0 Internacional</a>.<br />Basada en una obra en <a xmlns:dct="http://purl.org/dc/terms/" href="www.radiouc.cl" rel="dct:source">www.radiouc.cl</a>
 					</div>
-				</div><!-- end article header -->
+				</div> <!-- end article header -->
+				<?php
+                    // Get the URL of this category
+                    $category_link = get_category_link(5);
+                ?>
+                <!-- Print a link to this category -->
+				<div class="row" style="margin-bottom:30px;">
+                    <a class="btn btn-primary pull-right" href="<?php echo esc_url( $category_link ); ?>" title="Ver más noticias">Ver más noticias</a>
+			    </div>
 				<div class="row programas radio">
 				    <div class="titulo">Programas</div>
 				    <div class="col-sm-3">

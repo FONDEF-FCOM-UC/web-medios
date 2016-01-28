@@ -13,7 +13,9 @@
 							<?php the_post_thumbnail( 'large'); ?>
 							
 							<div class="page-header">
-							    <?php the_category(', '); ?>
+							    <div class="categories">
+							    <?php the_category('&bull;'); ?>
+							    </div>
 							    <h1 class="single-title" itemprop="headline"><?php the_title(); ?></h1>
 							    <div class="excerpt">
 							        <?php global $more; $more = 0;
@@ -26,7 +28,7 @@
 						                <?php the_author_posts_link(); ?>
         							</div>
         							<div class="fecha">
-        							    <?php _e("Posted", "wpbootstrap"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('F jS, Y', '','', FALSE); ?></time>
+        							    Publicado el <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php echo get_the_date('j \d\e F, Y', '','', FALSE); ?></time>
     							    </div>
 						        </div>
 						    </div>

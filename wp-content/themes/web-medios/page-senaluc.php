@@ -77,6 +77,7 @@ Template Name: Portada Señal UC
 					<?php if($i == 4): ?>
 				    </div>
 			    </div>
+			    <hr>
 				<div id="main" class="row frontpage" role="main">
 					<?php endif; ?>
 					    <article <?php post_class('clearfix col-sm-4 news-fixed'); ?>>
@@ -99,9 +100,17 @@ Template Name: Portada Señal UC
 					?>	
 					<?php endif; ?>
 				</div> <!-- end article header -->
+				<?php
+                    // Get the URL of this category
+                    $category_link = get_category_link(6);
+                ?>
+                <!-- Print a link to this category -->
+				<div class="row" style="margin-bottom:30px;">
+                    <a class="btn btn-primary pull-right" href="<?php echo esc_url( $category_link ); ?>" title="Ver más noticias">Ver más noticias</a>
+			    </div>
 				<div class="row programas">
 				    <div class="titulo">Programas</div>
-				    <div class="col-sm-2 programa">
+				    <div class="col-sm-3 programa">
 				        <img src="http://www.senaluc.cl/app_socialstream/uploads/programacion/56610497ddd11.jpg"><br>
 				        <h2>Miradas UC</h2>
 				    </div>

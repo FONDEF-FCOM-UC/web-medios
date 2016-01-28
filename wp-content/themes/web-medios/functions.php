@@ -808,9 +808,9 @@ function wp_bootstrap_page_navi($before = '', $after = '') {
     echo '<li class="prev"><a href="'.get_pagenum_link().'" title="' . __('First','wpbootstrap') . '">'.$first_page_text.'</a></li>';
   }
     
-  $prevposts = get_previous_posts_link( __('&larr; Previous','wpbootstrap') );
+  $prevposts = get_previous_posts_link( __('&larr; Anterior','wpbootstrap') );
   if($prevposts) { echo '<li>' . $prevposts  . '</li>'; }
-  else { echo '<li class="disabled"><a href="#">' . __('&larr; Previous','wpbootstrap') . '</a></li>'; }
+  else { echo '<li class="disabled"><a href="#">' . __('&larr; Anterior','wpbootstrap') . '</a></li>'; }
   
   for($i = $start_page; $i  <= $end_page; $i++) {
     if($i == $paged) {
@@ -820,7 +820,7 @@ function wp_bootstrap_page_navi($before = '', $after = '') {
     }
   }
   echo '<li class="">';
-  next_posts_link( __('Next &rarr;','wpbootstrap') );
+  next_posts_link( __('Siguiente &rarr;','wpbootstrap') );
   echo '</li>';
   if ($end_page < $max_page) {
     $last_page_text = "&raquo;";

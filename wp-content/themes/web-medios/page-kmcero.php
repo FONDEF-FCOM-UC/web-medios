@@ -81,9 +81,19 @@ Template Name: Portada KmCero
 					<?php endwhile; 
 					    wp_reset_postdata();
 					?>	
-					</div>
 					<?php endif; ?>
 				</div> <!-- end #main -->
+				<?php
+                    // Get the ID of a given category
+                    $category_id = get_cat_ID('kmcero');
+
+                    // Get the URL of this category
+                    $category_link = get_category_link( $category_id );
+                ?>
+                <!-- Print a link to this category -->
+                <div class="row" style="margin-bottom:30px;">
+                    <a class="btn btn-primary pull-right" href="<?php echo esc_url( $category_link ); ?>" title="Ver más noticias">Ver más noticias</a>
+			    </div>
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>
