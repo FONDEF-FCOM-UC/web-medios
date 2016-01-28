@@ -368,6 +368,20 @@ footer li {
     font-size: 12px;
 }
 
+#main .categories ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main .categories li
+{
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
 #main .categories a {
     padding: 10px;
     background-color: #3d7edb;
