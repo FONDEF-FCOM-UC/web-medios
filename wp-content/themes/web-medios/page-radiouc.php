@@ -85,7 +85,7 @@ Template Name: Portada RadioUC
 					<?php endif; ?>
 					    <article <?php post_class('clearfix col-sm-6 news-fixed'); ?>>
 				            <div class="image">
-				                <?php if($tags[0]->name != ""): ?>
+				                <?php if($categories[0]->name != ""): ?>
 					            <span class="frontpage-tag"><?php echo $categories[0]->name ?></span>
 					            <?php endif; ?>
 					            <a href="<?php echo the_permalink(); ?>">
